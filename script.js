@@ -8,8 +8,8 @@ function showMessage(response) {
     // Set the button position to absolute
     noButton.style.position = "absolute";
 
-    // Change the image source to "gun.gif"
-    document.getElementsByClassName("image")[0].src = "images/gun.gif";
+    // Change the image source to "sad dog image"
+    document.getElementsByClassName("image")[0].src = "images/secondImage.jpg";
 
     // Generate random coordinates within the visible container
     const randomX = Math.max(0, Math.floor(Math.random() * maxWidth));
@@ -21,14 +21,14 @@ function showMessage(response) {
 
     // Update text content and hide the name message
     document.getElementById("question").textContent =
-      "Choose wisely";
+      "Take your time :)";
     document.getElementById("name").style.display = "none";
 
     // Add a mouseover event listener to the "No" button
     noButton.addEventListener("mouseover", () => {
       if (!videoPlayed) {
         const videoElement = document.createElement("video");
-        videoElement.src = "./Maroon 5 - Sugar.mp4#t=42";
+        videoElement.src = "./video.mp4#t=42";
         videoElement.autoplay = true;
         videoElement.controls = false;
         document.body.appendChild(videoElement);
@@ -36,7 +36,7 @@ function showMessage(response) {
         videoElement.style.top = "40%";
         videoElement.style.left = "50%";
         videoElement.style.transform = "translate(-50%, -50%)";
-        videoElement.style.width = "700px"
+        videoElement.style.width = "700px";
         document.body.appendChild(videoElement);
         // Set the flag to true after playing the video
         videoPlayed = true;
@@ -70,12 +70,19 @@ function showMessage(response) {
     audioElement.play() // Play the sound
       .catch(e => console.error("Audio playback failed:", e)); // Catch and log playback errors
 
-    // Update the text content, display the message, and change the image to "dance.gif"
+    // Create an audio element to play the sound
+    const audioElement2 = document.createElement("audio");
+    audioElement2.src = "./audio.mp4"; // Source of the sound
+    audioElement2.preload = "auto"; // Preloading the audio
+    audioElement2.play() // Play the sound
+        .catch(e => console.error("Audio playback failed:", e)); // Catch and log playback errors
+
+    // Update the text content, display the message, and change the image to "celebration-will-smith.gif"
     const yesMessage = document.getElementById("question");
-    yesMessage.textContent = "See you on the 14th my princess";
+    yesMessage.textContent = "Get ready for a special day my love";
     yesMessage.style.display = "block";
     yesMessage.style.fontStyle = "normal";
-    document.getElementsByClassName("image")[0].src = "images/dance.gif";
+    document.getElementsByClassName("image")[0].src = "images/celebration-will-smith.gif";
 
     // Remove the "Yes" button
     document.getElementById("yesButton").remove();
