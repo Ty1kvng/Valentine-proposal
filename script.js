@@ -79,7 +79,7 @@ function showMessage(response) {
 
     // Update the text content, display the message, and change the image to "celebration-will-smith.gif"
     const yesMessage = document.getElementById("question");
-    yesMessage.textContent = "Get ready for a special day my love";
+    yesMessage.textContent = "Get ready for a special day my love. Check your email!";
     yesMessage.style.display = "block";
     yesMessage.style.fontStyle = "normal";
     document.getElementsByClassName("image")[0].src = "images/celebration-will-smith.gif";
